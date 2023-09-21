@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile.source-build
+          file: ${{ matrix.file }}
           build-args: |
             RELEASE=${{ needs.get_version.outputs.release_version_tag }} CONFIGURE_FLAGS="--enable-multilib"
           push: true
